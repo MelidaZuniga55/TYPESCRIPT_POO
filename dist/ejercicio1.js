@@ -1,5 +1,4 @@
 "use strict";
-// Clase para representar una cabecera de página web
 class CabeceraPagina {
     constructor(titulo, color, fuente) {
         this.titulo = titulo;
@@ -7,15 +6,24 @@ class CabeceraPagina {
         this.fuente = fuente;
         this.alineacion = "centro"; // Valor por defecto
     }
-    // Método para configurar cómo se alinea el título
+    // Primer método: obtener título, color y fuente
+    obtenerDatos() {
+        return {
+            titulo: this.titulo,
+            color: this.color,
+            fuente: this.fuente,
+        };
+    }
+    // Segundo método: configurar alineación
     configurarAlineacion(alineacion) {
         this.alineacion = alineacion;
     }
-    // Método que muestra todas las propiedades
+    // Tercer método: imprimir todas las propiedades
     mostrarCabecera() {
-        console.log("Título:", this.titulo);
-        console.log("Color:", this.color);
-        console.log("Fuente:", this.fuente);
+        const datos = this.obtenerDatos();
+        console.log("Título:", datos.titulo);
+        console.log("Color:", datos.color);
+        console.log("Fuente:", datos.fuente);
         console.log("Alineación:", this.alineacion);
     }
 }
